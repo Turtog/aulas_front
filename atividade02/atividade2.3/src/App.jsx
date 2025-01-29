@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     console.table(listTodos);
   }, [listTodos]);
-
+//comentario
   return (
     <>
       <h1>React ToDoApp</h1>
