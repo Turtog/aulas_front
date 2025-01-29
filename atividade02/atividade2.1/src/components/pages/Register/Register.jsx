@@ -1,44 +1,55 @@
-import Header from '../../Header';
-import Footer from '../../Footer';
-import './Register.css';
+import React from 'react';
+import { 
+    RegisterContainer, 
+    RegisterMain, 
+    FormSection, 
+    FormGroup, 
+    Label, 
+    Input, 
+    Button, 
+    LoginLink 
+} from './Register.styles';
+import Header from '../../Header/Header.jsx';
+import Footer from '../../Footer/Footer.jsx';
 
 const Register = () => {
     return (
-        <div className="register">
-        <Header />
-        <main>
-        <section className="form-section">
-            <article>
-            <h2>Registrar</h2>
-            <form
-                action="../../include/logica_pessoa.php"
-                method="post"
-                id="registerForm"
-                encType="multipart/form-data"
-            >
-                <label htmlFor="newName">Nome:</label>
-                <input type="text" id="newName" name="nome" required="" />
-                <label htmlFor="newCpf">CPF:</label>
-                <input type="text" id="newCpf" name="cpf" required="" />
-                <label htmlFor="newEmail">Email:</label>
-                <input type="email" id="newEmail" name="email" required="" />
-                <label htmlFor="newPassword">Senha:</label>
-                <input type="password" id="newPassword" name="senha" required="" />
-                <label htmlFor="newImage">Imagem:</label>
-                <input type="file" id="newImage" name="imagem" />
-                <br />
-                <button type="submit" name="cadastrar" value="Cadastrar">
-                Registrar
-                </button>
-            </form>
-            <p>
-                Já tem uma conta? <a href="login.html">Faça login</a>
-            </p>
-            </article>
-        </section>
-        </main>
-        <Footer />
-        </div>
+        <RegisterContainer>
+            <Header />
+            <RegisterMain>
+                <h1>Registrar</h1>
+                <FormSection>
+                    <h2>Preencha o formulário abaixo</h2>
+                    <form id="register-form" method="post" action="../../include/logica_pessoa.php">
+                        <FormGroup>
+                            <Label htmlFor="newName">Nome</Label>
+                            <Input type="text" id="newName" name="nome" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="newCpf">CPF</Label>
+                            <Input type="text" id="newCpf" name="cpf" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="newEmail">Email</Label>
+                            <Input type="email" id="newEmail" name="email" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="newPassword">Senha</Label>
+                            <Input type="password" id="newPassword" name="senha" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="newImage">Imagem</Label>
+                            <Input type="file" id="newImage" name="imagem" />
+                        </FormGroup>
+                        <Button type="submit" name="cadastrar" value="Cadastrar">Registrar</Button>
+                    </form>
+                    <p>
+                        Já tem uma conta? <LoginLink href="login.html">Faça login</LoginLink>
+                    </p>
+                </FormSection>
+            </RegisterMain>
+            <Footer />
+        </RegisterContainer>
     );
 };
 

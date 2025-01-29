@@ -1,42 +1,45 @@
-import {Link} from 'react-router-dom';
-import Header from '../../Header';
-import Footer from '../../Footer';
-import './Suporte.css';
+import Header from '../../Header/Header.jsx';
+import Footer from '../../Footer/Footer.jsx';
+import { 
+    SuporteContainer,
+    Main, 
+    FormSection, 
+    FormGroup, 
+    Label, 
+    Input, 
+    Textarea, 
+    Button, 
+    Alert,
+    MediaQueryFormSection 
+} from './Suporte.styles';
 
 const Suporte = () => {
     return (
-        <div className="suporte">
+        <SuporteContainer>
         <Header />
-        <main>
-        <h1>Suporte</h1>
-        <section className="form-section">
-            <h2>Entre em Contato Conosco</h2>
-            <form id="suporte-form">
-            <div className="form-group">
-                <label htmlFor="nome">Nome</label>
-                <input type="text" id="nome" name="nome" required="" />
-            </div>
-            <div className="form-group">
-                <label htmlFor="email">E-mail</label>
-                <input type="email" id="email" name="email" required="" />
-            </div>
-            <div className="form-group">
-                <label htmlFor="mensagem">Mensagem</label>
-                <textarea
-                id="mensagem"
-                name="mensagem"
-                rows={4}
-                required=""
-                defaultValue={""}
-                />
-            </div>
-            <button type="submit">Enviar</button>
-            <p id="form-alert" className="alert" />
-            </form>
-        </section>
-        </main>
+            <Main>
+            <FormSection>
+                    <h2>Entre em Contato Conosco</h2>
+                    <form id="suporte-form">
+                        <FormGroup>
+                            <Label htmlFor="nome">Nome</Label>
+                            <Input type="text" id="nome" name="nome" required="" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="email">E-mail</Label>
+                            <Input type="email" id="email" name="email" required="" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="mensagem">Mensagem</Label>
+                            <Textarea id="mensagem" name="mensagem" rows={4} required="" />
+                        </FormGroup>
+                        <Button type="submit">Enviar</Button>
+                        <Alert id="form-alert" />
+                    </form>
+                </FormSection>
+            </Main>
         <Footer />
-        </div>
+        </SuporteContainer>
     );
 };
 
