@@ -1,25 +1,17 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+import { useContext } from 'react';
+import Todo from '../Todo/Todo';
+import { StateTodosList } from '../../context/ListTodosProvider';
 
-import Todo from "../Todo/Todo";
-
-const ListTodos = ({ todosList, deleteTodo, editTodo }) => {
-  console.table({ todosList });
+export default function ListTodo() {
+  const { listTodos } = useContext(StateTodosList);
   return (
     <>
-      <h2>Lista de Tarefas:</h2>
-      {todosList.length > 0 &&
-        todosList.map((todo, i) => (
-          <Todo
-            index={i}
-            key={`todo_${i}`}
-            todo={todo}
-            deleteTodo={deleteTodo}
-            editTodo={editTodo}
-          />
+      <p>Suas Tarefas:</p>
+      <ol>
+        {listTodos.map((todo, i) => (
+          <Todo key={i} todo={todo} />
         ))}
+      </ol>
     </>
   );
-};
-
-export default ListTodos;
+}

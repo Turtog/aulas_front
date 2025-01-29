@@ -1,42 +1,21 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import { useEffect } from "react";
-import "./todo.css";
-const Todo = ({ index, todo, deleteTodo, editTodo }) => {
-  useEffect(() => {
-    return () => {
-      console.warn(`${todo.title} removido !!!`);
-    };
-  }, []);
+import { useContext } from 'react';
+import { StateTodosList } from '../../context/ListTodosProvider';
+
+export default function Todo({ todo }) {
+  const { deleteTodo, setEditedTodo } = useContext(StateTodosList);
 
   return (
-    <div className="todo_item">
-      <div>
-        <h3>
-          &nbsp;&nbsp;&nbsp;{index + 1}º
-          &nbsp;&nbsp;&nbsp;{todo.title}
-        </h3>
-      </div>
-      <details>
-        <summary>Descrição</summary>
-        {todo.text}
-        <details>
-        <summary>Etapas</summary>
-        <ol>
-          <li>Etapas</li>
-          <li>Etapas</li>
-          <li>Etapas</li>
-        </ol>
-      </details>
-      </details>
-      <div>
-        <button onClick={() => deleteTodo(todo)}>&#x274C;</button>
-        <button className="todo_edit" onClick={() => editTodo(todo)}>
-          &#x1F4DD;
-        </button>
-      </div>
-    </div>
+    <li>
+      <h2>{todo.title}</h2>
+      <h5>{todo.text}</h5>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#" onClick={() => setEditedTodo(todo)} title="Editar">
+        Editar
+      </a>
+      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#" onClick={() => deleteTodo(todo)} title="Deletar">
+        X
+      </a>
+    </li>
   );
-};
-
-export default Todo;
+}

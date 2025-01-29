@@ -1,9 +1,16 @@
 import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../Header';
 import Footer from '../../Footer';
 import './Login.css';
 
 const Login = () => {
+    const handleLogin = () => {
+        localStorage.setItem("authToken", "user123"); // Simula o login
+        navigate("/index"); // Redireciona para a página principal após login
+      };
+      
+    const navigate = useNavigate();
     return (
         <div className="login">
         <Header />
@@ -20,9 +27,7 @@ const Login = () => {
                 <input type="email" id="email" name="email" required="" />
                 <label htmlFor="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required="" />
-                <button type="submit" name="entrar" value="Entrar">
-                Entrar
-                </button>
+                <button onClick={handleLogin}>Entrar</button>
             </form>
             <p>
                 Não tem uma conta?{" "}

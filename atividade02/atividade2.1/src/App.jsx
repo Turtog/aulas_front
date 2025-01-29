@@ -1,5 +1,6 @@
 import './App.css';
 import FilterableServicoTable from "./components/FilterableServicoTable/FilterableServicoTable";
+import { ServicoProvider } from "./components/Context/ServicoContext";
 
 const SERVICOS = [
   { category: 'Reformas', servicoName: 'Encanador' },
@@ -9,7 +10,11 @@ const SERVICOS = [
   { category: 'Domésticos', servicoName: 'Limpeza de Piscina' },
   { category: 'Assistencias', servicoName: 'Ar Condicionado' },
 ];
-//comentario
+
 export default function App() {
-  return <FilterableServicoTable servicos={SERVICOS} />;
+  return (
+    <ServicoProvider>
+      <FilterableServicoTable />
+    </ServicoProvider>
+  );
 }

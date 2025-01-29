@@ -15,6 +15,7 @@ import Cliente from './components/pages/Cliente/Cliente';
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
 import Suporte from './components/pages/Suporte/Suporte';
+import PrivateRoute from './components/privateRoute/PrivateRoute';
 import './main.css';
 
 const router = createBrowserRouter(
@@ -28,12 +29,14 @@ const router = createBrowserRouter(
       <Route path="/" element={<Link to="/index">Home</Link>} />
       <Route path="index" element={<Index />} />
       <Route path="cliente" element={<Cliente />} />
-      <Route path="perfil/:id" element={<Perfil />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
       <Route path="suporte" element={<Suporte />} />
-      <Route path="app" element={<App />} />
 
+      <Route element={<PrivateRoute />}>
+      <Route path="perfil/:id" element={<Perfil />} />
+      <Route path="app" element={<App />} />
+      </Route>
     </Route>
   )
 );
