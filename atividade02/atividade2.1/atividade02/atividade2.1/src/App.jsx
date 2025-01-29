@@ -1,18 +1,15 @@
 import './App.css';
-import Header from './components/Header';
-import Index from './components/pages/Index/Index';
-import Footer from './components/Footer';
+import FilterableServicoTable from "./components/FilterableServicoTable/FilterableServicoTable";
 
-const App = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Index />
-      <Footer />
-    </div>
-  );
-};
-
-
-
-export default App;
+const SERVICOS = [
+  { category: 'Reformas', servicoName: 'Encanador' },
+  { category: 'Reformas', servicoName: 'Eletricista' },
+  { category: 'Domésticos', servicoName: 'Babá' },
+  { category: 'Domésticos', servicoName: 'Diarista' },
+  { category: 'Domésticos', servicoName: 'Limpeza de Piscina' },
+  { category: 'Assistencias', servicoName: 'Ar Condicionado' },
+];
+//comentario
+export default function App() {
+  return <FilterableServicoTable servicos={SERVICOS} />;
+}
