@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Header from '../../Header';
 import Footer from '../../Footer';
-import App from '../../../App';
 import './Index.css';
 
 const Index = () => {
@@ -9,7 +8,6 @@ const Index = () => {
         <div className="index">
         <Header />
         <main className='index'>
-        <App />
         <section className="main-options">
             <article className="service-option">
             <h2>Cliente</h2>

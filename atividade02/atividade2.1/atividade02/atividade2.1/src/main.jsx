@@ -8,7 +8,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import App from './App';
 import Index from './components/pages/Index/Index';
 import Perfil from './components/pages/Perfil/Perfil';
 import Cliente from './components/pages/Cliente/Cliente';
@@ -32,7 +31,6 @@ const router = createBrowserRouter(
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
       <Route path="suporte" element={<Suporte />} />
-      <Route path="app" element={<App />} />
 
     </Route>
   )

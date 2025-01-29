@@ -20,8 +20,16 @@ const Cliente = () => {
                         <textarea id="descricao" name="descricao" rows="4" required></textarea>
                     </div>
                     <div className="form-group">
+                        <label htmlFor="data">Data</label>
+                        <input type="date" id="data" name="data" required/>
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="endereco">Endereço</label>
                         <input type="text" id="endereco" name="endereco" required/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="preco">Preço</label>
+                        <input type="number" id="preco" name="preco" step="0.01" required/>
                     </div>
                     <button type="submit" name="cadastrar" value="cadastrar">Enviar Pedido</button>
                     <p id="form-alert" className="alert"></p>
