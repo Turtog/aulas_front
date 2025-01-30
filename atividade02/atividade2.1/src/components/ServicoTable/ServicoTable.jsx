@@ -18,7 +18,6 @@ export default function ServicoTable({ servicos }) {
         lastCategory = servico.category;
     });
 
-    // console.log(rows)
     const rows_reformas = servicos.map((servico) => {
         if (servico.category === 'Reformas')
             return (<ServicoRow servico={servico} key={servico.name} />)
@@ -33,16 +32,6 @@ export default function ServicoTable({ servicos }) {
         if (servico.category === 'Assistencia')
             return (<ServicoRow servico={servico} key={servico.name} />)
     });
-
-
-    // const domesticos = servicos.filter((servico) => servico.category === 'Domésticos');
-    // console.log('filter:', domesticos)
-
-    // const reformas = servicos.filter((servico) => servico.category === 'Reformas');
-    // console.log('filter:', reformas)
-
-    // const assistencias = servicos.filter((servico) => servico.category === 'Assistencias');
-    // console.log('filter:', assistencias)
 
     return (
         <>
@@ -70,32 +59,6 @@ export default function ServicoTable({ servicos }) {
                     {rows_domesticos}
                 </tbody>
             </table>
-            {/* <p></p>
-            <h3>Tabela Gerada com Filter (array) e depois Map (JSX - Componentes)</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <ServicoCategoryRow
-                        category={'Reformas'}
-                        key={'reformas'}
-                    />
-                    {reformas.map(servico => <ServicoRow servico={servico} key={servico.name} />)}
-                    <ServicoCategoryRow
-                        category={'Domésticos'}
-                        key={'domésticos'}
-                    />
-                    {assistencias.map(servico => <ServicoRow servico={servico} key={servico.name} />)}
-                    <ServicoCategoryRow
-                        category={'Assistencias'}
-                        key={'assistencias'}
-                    />
-                    {assistencias.map(servico => <ServicoRow servico={servico} key={servico.name} />)}
-                </tbody>
-            </table> */}
         </>
     );
 }

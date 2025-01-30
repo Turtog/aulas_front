@@ -44,7 +44,7 @@ const Register = () => {
                         <Button type="submit" name="cadastrar" value="Cadastrar">Registrar</Button>
                     </form>
                     <p>
-                        Já tem uma conta? <LoginLink href="login.html">Faça login</LoginLink>
+                        Já tem uma conta? <LoginLink href="login">Faça login</LoginLink>
                     </p>
                 </FormSection>
             </RegisterMain>

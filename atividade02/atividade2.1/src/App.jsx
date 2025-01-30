@@ -1,20 +1,16 @@
-import './App.css';
-import FilterableServicoTable from "./components/FilterableServicoTable/FilterableServicoTable";
-import { ServicoProvider } from "./components/Context/ServicoContext";
+import { ServicoProvider } from "./components/Context/ServicoProvider.jsx";
+import { AuthProvider } from "./components/Context/AuthProvider.jsx";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./main.jsx";
 
-const SERVICOS = [
-  { category: 'Reformas', servicoName: 'Encanador' },
-  { category: 'Reformas', servicoName: 'Eletricista' },
-  { category: 'Domésticos', servicoName: 'Babá' },
-  { category: 'Domésticos', servicoName: 'Diarista' },
-  { category: 'Domésticos', servicoName: 'Limpeza de Piscina' },
-  { category: 'Assistencias', servicoName: 'Ar Condicionado' },
-];
-
-export default function App() {
+function App() {
   return (
-    <ServicoProvider>
-      <FilterableServicoTable />
-    </ServicoProvider>
+    <AuthProvider>
+      <ServicoProvider>
+        <RouterProvider router={router} />
+      </ServicoProvider>
+    </AuthProvider>
   );
 }
+
+export default App;

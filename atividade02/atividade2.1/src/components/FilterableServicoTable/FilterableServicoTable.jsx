@@ -1,7 +1,7 @@
-import { useServicos } from "../Context/ServicoContext";
+import { useServicos } from "../Context/ServicoProvider";
 
 export default function FilterableServicoTable() {
-  const servicos = useServicos(); // Obtém os serviços do contexto
+  const servicos = useServicos();
 
   return (
     <div>
