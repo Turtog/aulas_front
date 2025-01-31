@@ -79,3 +79,26 @@ export const DefaultStyled = styled.div`
     }
   }
 `;
+
+export const LogoutIcon = styled.button`
+  background-color: #f44336; /* Cor vermelha */
+  color: white; /* Texto branco */
+  font-size: 16px; /* Tamanho da fonte */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Remover borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+
+  &:hover {
+    background-color: #d32f2f; /* Cor de fundo ao passar o mouse */
+  }
+
+  &:focus {
+    outline: none; /* Remover outline ao clicar */
+  }
+
+  &:active {
+    background-color: #c62828; /* Cor de fundo ao pressionar */
+  }
+`;

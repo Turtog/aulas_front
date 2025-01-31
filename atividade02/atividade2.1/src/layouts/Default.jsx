@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuthContext } from "../components/Context/AuthProvider";
+import { LogoutIcon } from "./layouts.styled";
 
 export default function Default() {
-  const { token, user } = useAuthContext();
+  const { token } = useAuthContext();
   const navigate = useNavigate();
+
   if (!token) return <Navigate to="/login" />;
 
   const onLogout = () => {
@@ -16,18 +14,14 @@ export default function Default() {
 
   return (
     <DefaultStyled>
-        <Header />
+        <LogoutIcon>
+          <button onClick={onLogout}>Logout</button>
+        </LogoutIcon>
         <main>
-          <aside>
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="/users">Users</Link>
-            <Link to="/cadastro">Novo User</Link>
-          </aside>
           <section>
             <Outlet />
           </section>
         </main>
-        <Footer />
     </DefaultStyled>
   );
 }
